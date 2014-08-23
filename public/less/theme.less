@@ -1,0 +1,50 @@
+
+// overall theme of the app.
+.top-nav-app {
+	background-color: @color3-1;
+	height: 66px;
+	padding: 16px;
+	border-bottom: 3px solid @color3-2;
+}
+.top-nav-app-loggedin {
+	background-color: transparent;
+	border: none;
+	padding: 32px 80px;
+	.inline-block {
+		display: none;
+	}
+}
+.sidebar {
+	background: #000;
+	border-right: 1px solid @color2-4;
+}
+.dash-bg {
+	background-color: #e6eae8;
+	color: @mywhite;
+	background-image: url("../img/geo.png");
+}
+.mytable {
+	thead {
+		background-color: @color3-1;
+		color: #fff;
+	}
+	tr {
+		border-bottom: 1px solid @color3-3;
+		&:hover {
+			background-color: lighten(@color3-1, 5%);
+			cursor: pointer;
+		}
+	}
+	td {
+		color: #000;
+		.rgba(#FFF, 0.5);
+	}
+}
+.inner { 
+	background: #f9f9f9;
+	color: #000;
+		font-family: 'Source Sans Pro', sans-serif;
+	h2 {
+		padding-bottom: 10px;
+	}
+}

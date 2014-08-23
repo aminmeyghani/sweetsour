@@ -1,0 +1,30 @@
+<div class="top-nav-app">
+  <div class="text-center">
+    
+    <!-- <span class="inline-block" style="padding-top:4px"><i icon="book" place="licon"></i>You have read: 540 pages ...</span> -->
+      <ul class="no-bullets fs-5 pull-right inverted-list">
+        <li><a tip="Logout" placement="bottom" href="/"><i icon="power-clean"></i></a></li>
+      </ul>
+    
+  </div>
+</div>
+<div ng-controller="MenuCtrl">
+  <alert type="success" close="hide()">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, esse ullam ratione similique mollitia unde asperiores quis sint cumque animi, nam praesentium assumenda a reiciendis sunt doloribus voluptas, facilis rerum.
+  </alert>
+  <p>{{isLibraryPage}}</p>
+  <table class="mytable">
+    <thead>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Calorie</th>
+    </thead>
+    <tr ng-repeat="d in dishes">
+      <td>{{d.name}}</td>
+      <td>{{d.value}}</td>
+      <td>{{d.calorie}}</td>
+    </tr>
+  </table>
+  
+  
+</div>

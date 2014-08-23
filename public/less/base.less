@@ -1,0 +1,73 @@
+// angular cloak
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+// list chrome reset
+ul {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start:0;
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+// better Bicubic Scaling: for ie6-7
+img { -ms-interpolation-mode: bicubic; }
+
+//mixins
+// hover states
+#hover{
+  .states(){
+    .smooth(@what: opacity);
+    &:hover{
+      .opacity(@hover-opacity);
+      cursor: pointer;
+      .smooth(@what: opacity);
+    }
+    &:active{
+      .opacity(@active-opacity);
+    }
+  }
+}
+
+// anchors
+a {
+	color : @color2;
+	text-decoration: none;
+	#hover.states();
+}
+a.inverted {
+  color : @mywhite;
+}
+
+// a's list
+.inverted-list {
+  a {
+    color: @mywhite;
+  }
+}
+
+.light-list {
+  a {
+    color : @color3;
+  }
+}

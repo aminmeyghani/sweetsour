@@ -1,0 +1,116 @@
+// app page specific
+.home-promo {
+	@media (max-width: @screen-sm) {
+		margin-top: 50px;
+	}
+	margin-top:173px;
+}
+.home-title {
+	text-align: center;
+	padding: 60px 0;
+	font-size: 3em;
+	margin-bottom: 68px;
+	margin-top: 38px;
+	border-bottom: 1px solid @light-gray1;
+}
+.home-promo-text {
+	padding: 20px 0 0 35px;
+	font-size: 23px;
+}
+.home-footer {
+@media (max-width: @screen-sm) {
+	padding: 39px;
+	font-size: 15px;
+}
+	background-color: #40557a;
+	color: #283D63;
+	padding: 84px 240px;
+	font-size: 23px;
+	text-shadow: 0px -1px 0px #000000, 0px 1px 0px #6785B9;
+}
+.welcome {
+	font-family: 'Source Sans Pro', sans-serif;
+	text-transform: uppercase;
+	font-weight: 100;
+	color: @mywhite;
+	padding-top: 11%;
+	font-size: 46px;
+	opacity: 0.7;
+	width: 50%;
+	margin : 0 auto;
+}
+.welcome-sub {
+	width: 46%;
+	margin: 0 auto;
+	font-size: 21px;
+}
+.home-bg {
+	background: url('../img/bg.png') no-repeat;
+	background-size: cover;
+	color: white;
+	.smooth(all);
+}
+
+.dash-bg {
+	background-color: @color1;
+	color: @mywhite;
+}
+
+.search-area {
+	padding:10px 0 25px 21px;
+	background-color: #e5e6e7;
+}
+
+.top-nav {
+	padding: 0 70px;
+	padding-bottom: 20px;
+	padding-top: 50px;
+}
+
+.top-nav-app {
+	// background-color: #2B4269;
+	// border-bottom: 1px solid #5D759E;
+	background-color: #CFB163;
+	height: 66px;
+	padding: 16px;
+	border-bottom: 3px solid #A39846;
+}
+
+.top-nav-app-loggedin {
+	background-color: transparent;
+	border: none;
+	padding: 32px 80px;
+}
+
+.active-nav {
+	color: @color3;
+}
+
+.profile-picture {
+	.circle();
+}
+.profile-picture-small {
+	&:extend(.profile-picture);
+	width: 30px;
+}
+.profile-picture-large {
+	&:extend(.profile-picture);
+	width: 60px;
+}
+// ---------
+// library
+.inner {
+  margin-top: 15px;
+  padding: 15px;
+  background: @color2;
+  border: 1px solid @color1;
+  &-with-scroll {
+		padding: 10px 2px 10px 10px;
+	}
+}
+
+//
+.help {
+	padding: 10px 0 0 0;
+	font-size: 17px;
+}
