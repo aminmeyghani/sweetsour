@@ -1,10 +1,8 @@
-angular.module('MainApp', ['ui.bootstrap','MainModule', 'ngRoute', 'ngResource','ngAnimate', 'angularSmoothscroll', 'ngCookies'])
+angular.module('MainApp', ['ui.bootstrap','MainModule', 'ngRoute','ngAnimate', 'angularSmoothscroll', 'ngCookies'])
 
 .run(['$rootScope', '$location', 'Auth', function ($rootScope, $location, Auth) {
   $rootScope.$on('$routeChangeStart', function (event) {
-    
     console.log("loaded ...");
-  	
   });
 }])
 

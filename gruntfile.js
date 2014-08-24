@@ -1,6 +1,7 @@
 module.exports = function (grunt) {
   //  Load all modules.
   require('load-grunt-tasks')(grunt, {pattern: ['grunt-contrib-*', 'grunt-*']});
+  var mozjpeg = require('imagemin-mozjpeg');
 
   // Control variables
     var app = {
@@ -109,13 +110,76 @@ module.exports = function (grunt) {
           "public/css/appprfx.css": "public/css/app.css"
         }
       }
+    },
+    // smushit: {
+    //   mygroup: {
+    //     src: ['public/img-raw/**/*.png','public/img-raw/**/*.jpg'],
+    //     dest: 'public/img'
+    //   }
+    // }
+    // imagemin: {                          // Task
+    //   dynamic: {                         // Another target
+    //     options: {                       // Target options
+    //       optimizationLevel: 7,
+    //     },
+    //     files: [{
+    //       expand: true,                  // Enable dynamic expansion
+    //       cwd: 'public/img-raw/',                   // Src matches are relative to this path
+    //       src: ['**/*.png'],   // Actual patterns to match
+    //       dest: 'public/img'                  // Destination path prefix
+    //     }]
+    //   }
+    // }
+    // imageoptim: {
+    //   myTask: {
+    //     options: {
+    //      jpegMini: false,
+    //      imageAlpha: true,
+    //      quitAfter: true
+    //    },
+    //     src: ['public/img-raw/bg.png', 'public/img']
+    //   }
+    // }
+    tinypng: {
+      options: {
+          apiKey: "1cqXDE68xmhHbm-8304VusOoLSP181e0",
+          checkSigs: true,
+          sigFile: 'public/img/file_sigs.json',
+          summarize: true,
+          showProgress: true,
+          stopOnImageError: true
+      },
+      // compress: {
+      //     files: {
+      //       'public/img/bg.png': 'public/img-raw/bg.png'
+      //     }
+      // }
+      // compress2: {
+      //     expand: true, 
+      //     src: 'src/{foo,bar,baz}.png', 
+      //     dest: 'dest/',
+      //     ext: '.min.png'
+      // },
+      compress3: {
+          src: ['**/*.png'],
+          cwd: 'public/img-raw/',
+          dest: 'public/img',
+          expand: true,
+          // rename: function(dest, src) { 
+          //     var parts = src.split('/'),
+          //     fname = path.basename(parts.pop(), ".png");
+          //     return path.join(dest, fname + '.min.png');
+          // }
+      }
     }
+
   });
 
   // Register Tasks
   grunt.registerTask('serve', function() {grunt.task.run(
     ['express:dev','watch']);
   });
+  grunt.registerTask('tinyimg', ['imagemin']);
   grunt.registerTask('icon', function() {grunt.task.run(
     ['font:all', 'json2less', 'less:glyphtest', 'copy:glyphs', 'copy:glyphLess']);
   });
